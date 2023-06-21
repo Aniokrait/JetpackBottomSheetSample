@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">JetpackComposeBottomSheetSample</string>
+    <string name="profile">プロフィール</string>
+    <string name="friends_list">フレンドリスト</string>
+    <string name="setting">設定</string>
+</resources>
