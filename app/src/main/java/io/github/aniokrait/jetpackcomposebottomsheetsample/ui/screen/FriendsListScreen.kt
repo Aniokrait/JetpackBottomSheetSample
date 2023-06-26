@@ -28,6 +28,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
+import io.github.aniokrait.jetpackcomposebottomsheetsample.R
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterialApi::class)
@@ -45,27 +46,27 @@ fun FriendsListScreen() {
         sheetState = state,
         sheetContent = {
 //            //ボトムシート内に表示するコンテンツ
-//            Column(
-//                modifier = Modifier.padding(top = 16.dp, bottom = 16.dp, start = 8.dp),
-//                verticalArrangement = Arrangement.SpaceBetween
-//            ) {
-//                BottomSheetIconTextRow(icon = R.drawable.baseline_share_24, text = "Share")
-//                BottomSheetIconTextRow(icon = R.drawable.baseline_link_24, text = "Get link")
-//                BottomSheetIconTextRow(icon = R.drawable.baseline_edit_24, text = "Edit name")
-//                BottomSheetIconTextRow(icon = R.drawable.baseline_delete_24, text = "Delete collection")
-//            }
-            var sheetCategory = BottomSheetCategory.SHEET_A
-            Column {
-                when(sheetCategory) {
-                    BottomSheetCategory.SHEET_A -> {
-                        //ボタンAに対応したボトムシートを表示
-                    }
-                    BottomSheetCategory.SHEET_B -> {
-                        //ボタンBに対応したボトムシートを表示
-                    }
-                }
-
+            Column(
+                modifier = Modifier.padding(top = 16.dp, bottom = 16.dp, start = 8.dp),
+                verticalArrangement = Arrangement.SpaceBetween
+            ) {
+                BottomSheetIconTextRow(icon = R.drawable.baseline_share_24, text = "Share")
+                BottomSheetIconTextRow(icon = R.drawable.baseline_link_24, text = "Get link")
+                BottomSheetIconTextRow(icon = R.drawable.baseline_edit_24, text = "Edit name")
+                BottomSheetIconTextRow(icon = R.drawable.baseline_delete_24, text = "Delete collection")
             }
+//            var sheetCategory = BottomSheetCategory.SHEET_A
+//            Column {
+//                when(sheetCategory) {
+//                    BottomSheetCategory.SHEET_A -> {
+//                        //ボタンAに対応したボトムシートを表示
+//                    }
+//                    BottomSheetCategory.SHEET_B -> {
+//                        //ボタンBに対応したボトムシートを表示
+//                    }
+//                }
+//
+//            }
         }
     ) {
         //ボトムシートを開く画面はModalBottomSheetLayoutでラップする必要があった。

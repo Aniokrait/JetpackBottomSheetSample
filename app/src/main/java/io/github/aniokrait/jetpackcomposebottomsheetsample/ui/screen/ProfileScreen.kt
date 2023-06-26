@@ -22,6 +22,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import io.github.aniokrait.jetpackcomposebottomsheetsample.R
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -34,6 +35,7 @@ fun ProfileScreen() {
         skipPartiallyExpanded = skipPartiallyExpanded
     )
 
+    //親画面のコンテンツ
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -55,21 +57,13 @@ fun ProfileScreen() {
             onDismissRequest = {openBottomSheet = false },
             sheetState = bottomSheetState,
         ) {
-            Column(modifier = Modifier.fillMaxSize()) {
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.SpaceBetween
-                ) {
-                    Text(text = "なんかの設定項目")
-                    Switch(checked = false, onCheckedChange = { })
-                }
-                Spacer(modifier = Modifier)
-                Row(
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Text(text = "なんかの設定項目2")
-                    Switch(checked = true, onCheckedChange = { })
-                }
+            Column(
+                modifier = Modifier.padding(start = 16.dp, bottom = 24.dp)
+            ) {
+                BottomSheetIconTextRow(icon = R.drawable.baseline_share_24, text = "Share")
+                BottomSheetIconTextRow(icon = R.drawable.baseline_link_24, text = "Get link")
+                BottomSheetIconTextRow(icon = R.drawable.baseline_edit_24, text = "Edit name")
+                BottomSheetIconTextRow(icon = R.drawable.baseline_delete_24, text = "Delete collection")
             }
         }
     }
